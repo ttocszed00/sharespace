@@ -16,3 +16,19 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+Route::get('/key/{key?}', function ($key = null) {
+    $return = [
+        'Name'         => 'ShareSpace',
+        'RequestType'  => 'POST',
+        'RequestUrl'   => URL::to('/upload'),
+        'FileFormName' => 'file',
+        'ResponeType'  => 'Text',
+        'URL'          => '$json:href$',
+        'DeletionURL'  => '$json:delete$'
+    ];
+
+    if ($key) $return['Arguments'] = ['key' => $key];
+
+    return $return;
+});
