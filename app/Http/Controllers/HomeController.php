@@ -26,9 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $Files = Files::all()->where('id', '=', Auth::user()->getAuthIdentifier());
+        $Files = Files::all()->where('id', '=', Auth::user()->id);
+        $Public_Files = Files::all()->where('id', '=', null);
          return view('home')->with([
-            "Files" => $Files
+            "Files" => $Files,
+             "Public_Files" => $Public_Files,
         ]);
     }
 }

@@ -18,8 +18,8 @@
         </div>
     </div>
 @endsection
-@section('thumbnails')
-    @foreach( $Files->chunk(5) as $row)
+@section('user thumbnails')
+    @foreach( $Files->chunk(6) as $row)
         <div class="row">
             @foreach( $row as $File )
                 <div class="col-md-2">

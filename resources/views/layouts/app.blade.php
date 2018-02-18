@@ -83,11 +83,29 @@
         </div>
     </nav>
     @yield('content')
-    <div class="col-md-offset-1">
-        @yield('thumbnails')
+    <div class="container">
+        <div class="row">
+            <div class="cold-md-8 ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Uploads
+                    </div>
+                    <div class="panel-body">
+                        @yield('user thumbnails')
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+
+
+    </div>
+
+
+
 <!-- Scripts -->
 <script src="/js/app.js"></script>
 </body>
 </html>
+

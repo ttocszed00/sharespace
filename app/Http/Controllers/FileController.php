@@ -102,7 +102,7 @@ class FileController extends Controller
     public function deleteImage()
         {
 
-            $query = Files::where('deletionkey', '=', $_GET['deletionkey'])->get();
+            $query = Files::where('deletionkey', '=', Request('deletionkey'))->get();
             foreach ($query as $details)
             {
                 $delete_image_path = $details->imagepath;
