@@ -22,3 +22,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::post('/upload', 'FileController@postUpload');
 Route::get('/{user}/{file}', 'FileController@getFile');
+Route::get('/{user}/thumbs/{file}', 'FileController@getThumb');
+Route::get('d/','FileController@deleteImage');
+Route::get('/test', 'TestController@test');
+
+

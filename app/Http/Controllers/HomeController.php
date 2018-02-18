@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Files;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $Files = Files::all()->where('id', '=', Auth::user()->getAuthIdentifier());
+         return view('home')->with([
+            "Files" => $Files
+        ]);
     }
 }
+
+
+
+

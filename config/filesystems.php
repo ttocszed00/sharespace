@@ -48,6 +48,12 @@ return [
             'root' => ENV('storage_root', storage_path('uploads')),
         ],
 
+        'local1' =>[
+            'driver' => 'local',
+            'root' => storage_path('uploads/public/thumbs'),
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

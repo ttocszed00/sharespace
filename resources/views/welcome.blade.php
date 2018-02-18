@@ -62,17 +62,11 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
     </style>
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            <a href="{{ url('/login') }}">Login</a>
-            <a href="{{ url('/register') }}">Register</a>
-        </div>
-    @endif
-
     <div class="content">
         <div class="title m-b-md">
             Share Space
@@ -82,7 +76,6 @@
             <a href="{{URL::to('api/key')}}">ShareX Import URL</a>
             <a href="https://github.com/Flupster/sharespace">Github</a>
             <a href="{{ url('/login') }}">Login</a>
-            <a href="{{ url('/register') }}">Register</a>
         </div>
     </div>
 </div>
